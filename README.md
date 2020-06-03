@@ -1,9 +1,9 @@
-Dash Core staging tree 0.15
+Tianjincoin core 0.1.0
 ===========================
 
 `master:` [![Build Status](https://travis-ci.org/dashpay/dash.svg?branch=master)](https://travis-ci.org/dashpay/dash) `develop:` [![Build Status](https://travis-ci.org/dashpay/dash.svg?branch=develop)](https://travis-ci.org/dashpay/dash/branches)
 
-https://www.dash.org
+https://tianjincoin.com
 
 
 What is Dash?
