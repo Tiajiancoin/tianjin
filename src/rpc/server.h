@@ -137,7 +137,7 @@ public:
 };
 
 /**
- * Dash RPC command dispatcher.
+ * Tiajians RPC command dispatcher.
  */
 class CRPCTable
 {

@@ -5,7 +5,7 @@ Upstart: tiajiansd.conf
 OpenRC:  tiajiansd.openrc
          tiajiansd.openrcconf
 CentOS:  tiajiansd.init
-OS X:    org.dash.dashd.plist
+OS X:    org.tiajians.tiajiansd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

@@ -91,7 +91,7 @@ public:
         vOutpoints.assign(setSelected.begin(), setSelected.end());
     }
 
-    // Dash-specific helpers
+    // Tiajians-specific helpers
 
     void UsePrivateSend(bool fUsePrivateSend)
     {

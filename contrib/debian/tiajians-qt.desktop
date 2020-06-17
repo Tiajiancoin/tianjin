@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tiajians Core
+Comment=Tiajians P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Tiajians peer-to-peer Netzwerk
+Comment[fr]=Tiajians, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Tiajians, eşten eşe kriptografik sanal para birimi
+Exec=tiajians-qt %u
+Terminal=false
+Type=Application
+Icon=tiajians128
+MimeType=x-scheme-handler/tiajians;
+Categories=Office;Finance;

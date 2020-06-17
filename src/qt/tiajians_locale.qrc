@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/tiajians_ar.qm</file>
+        <file alias="bg">locale/tiajians_bg.qm</file>
+        <file alias="de">locale/tiajians_de.qm</file>
+        <file alias="en">locale/tiajians_en.qm</file>
+        <file alias="es">locale/tiajians_es.qm</file>
+        <file alias="fi">locale/tiajians_fi.qm</file>
+        <file alias="fr">locale/tiajians_fr.qm</file>
+        <file alias="it">locale/tiajians_it.qm</file>
+        <file alias="ja">locale/tiajians_ja.qm</file>
+        <file alias="ko">locale/tiajians_ko.qm</file>
+        <file alias="nl">locale/tiajians_nl.qm</file>
+        <file alias="pl">locale/tiajians_pl.qm</file>
+        <file alias="pt">locale/tiajians_pt.qm</file>
+        <file alias="ro">locale/tiajians_ro.qm</file>
+        <file alias="ru">locale/tiajians_ru.qm</file>
+        <file alias="sk">locale/tiajians_sk.qm</file>
+        <file alias="th">locale/tiajians_th.qm</file>
+        <file alias="tr">locale/tiajians_tr.qm</file>
+        <file alias="vi">locale/tiajians_vi.qm</file>
+        <file alias="zh_CN">locale/tiajians_zh_CN.qm</file>
+        <file alias="zh_TW">locale/tiajians_zh_TW.qm</file>
+    </qresource>
+</RCC>

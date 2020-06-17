@@ -1,0 +1,6 @@
+usr/local/bin/tiajians-qt usr/bin
+share/pixmaps/tiajians32.xpm usr/share/pixmaps
+share/pixmaps/tiajians16.xpm usr/share/pixmaps
+share/pixmaps/tiajians128.png usr/share/pixmaps
+debian/tiajians-qt.desktop usr/share/applications
+debian/tiajians-qt.protocol usr/share/kde4/services/

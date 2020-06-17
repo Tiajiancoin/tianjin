@@ -11,7 +11,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between tiajians-cli and  tiajiansd)
- * of a given instance of the Dash system.
+ * of a given instance of the Tiajians system.
  */
 class CBaseChainParams
 {

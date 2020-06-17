@@ -32,14 +32,14 @@ Run `test_tiajians --help` for the full list.
 ### Note on adding test cases
 
 The sources in this directory are unit test cases.  Boost includes a
-unit testing framework, and since Dash Core already uses boost, it makes
+unit testing framework, and since Tiajians Core already uses boost, it makes
 sense to simply use this framework rather than require developers to
 configure some other framework (we want as few impediments to creating
 unit tests as possible).
 
 The build system is setup to compile an executable called `test_tiajians`
 that runs all of the unit tests.  The main source file is called
-test_dash.cpp. To add a new unit test file to our test suite you need
+test_tiajians.cpp. To add a new unit test file to our test suite you need
 to add the file to `src/Makefile.test.include`. The pattern is to create 
 one test file for each class or source file for which you want to create 
 unit tests.  The file naming convention is `<source_filename>_tests.cpp` 

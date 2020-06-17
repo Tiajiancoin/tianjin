@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DASH_QUORUMS_UTILS_H
-#define DASH_QUORUMS_UTILS_H
+#ifndef TIAJIANS_QUORUMS_UTILS_H
+#define TIAJIANS_QUORUMS_UTILS_H
 
 #include "consensus/params.h"
 #include "net.h"
@@ -69,4 +69,4 @@ public:
 
 } // namespace llmq
 
-#endif//DASH_QUORUMS_UTILS_H
+#endif//TIAJIANS_QUORUMS_UTILS_H

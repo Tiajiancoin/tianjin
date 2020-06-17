@@ -6,7 +6,7 @@
 import time
 
 from test_framework.mininode import *
-from test_framework.test_framework import DashTestFramework
+from test_framework.test_framework import TiajiansTestFramework
 from test_framework.util import *
 
 '''
@@ -16,9 +16,9 @@ Checks LLMQs based ChainLocks
 
 '''
 
-class LLMQChainLocksTest(DashTestFramework):
+class LLMQChainLocksTest(TiajiansTestFramework):
     def set_test_params(self):
-        self.set_dash_test_params(6, 5, fast_dip3_enforcement=True)
+        self.set_tiajians_test_params(6, 5, fast_dip3_enforcement=True)
 
     def run_test(self):
 

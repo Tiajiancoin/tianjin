@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  tiajiansd The Tiajians Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: tiajiansd
+# processname: tiajiansd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/tiajiansd, see below
+if [ -f /etc/sysconfig/tiajiansd ]; then
+        . /etc/sysconfig/tiajiansd
+fi
+
+RETVAL=0
+
+prog=tiajiansd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/tiajiansd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/tiajiansd}
+
+# tiajiansd defaults to /usr/bin/tiajiansd, override with BITCOIND_BIN
+tiajiansd=${BITCOIND_BIN-/usr/bin/tiajiansd}
+
+# tiajiansd opts default to -disablewallet, override with BITCOIND_OPTS
+tiajiansd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $tiajiansd $tiajiansd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
