@@ -1,15 +1,15 @@
 [Unit]
-Description=Dash's distributed currency daemon
+Description=Tiajians's distributed currency daemon
 After=network.target
 
 [Service]
-User=dashcore
-Group=dashcore
+User=tiajians
+Group=tiajians
 
 Type=forking
-PIDFile=/var/lib/dashd/dashd.pid
-ExecStart=/usr/bin/dashd -daemon -pid=/var/lib/dashd/dashd.pid \
--conf=/etc/dashcore/dash.conf -datadir=/var/lib/dashd -disablewallet
+PIDFile=/var/lib/tiajiansd/tiajiansd.pid
+ExecStart=/usr/bin/tiajiansd -daemon -pid=/var/lib/tiajiansd/tiajiansd.pid \
+-conf=/etc/tiajians/tiajians.conf -datadir=/var/lib/tiajiansd -disablewallet
 
 Restart=always
 PrivateTmp=true

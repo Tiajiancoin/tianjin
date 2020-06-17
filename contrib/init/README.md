@@ -1,10 +1,10 @@
 Sample configuration files for:
 ```
-SystemD: dashd.service
-Upstart: dashd.conf
-OpenRC:  dashd.openrc
-         dashd.openrcconf
-CentOS:  dashd.init
+SystemD: tiajiansd.service
+Upstart: tiajiansd.conf
+OpenRC:  tiajiansd.openrc
+         tiajiansd.openrcconf
+CentOS:  tiajiansd.init
 OS X:    org.dash.dashd.plist
 ```
 have been made available to assist packagers in creating node packages here.

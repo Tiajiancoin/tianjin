@@ -6,14 +6,14 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/dash
-src/dashd
-src/dash-cli
-src/dash-tx
-src/test/test_dash
-src/test/test_dash_fuzzy
-src/qt/test/test_dash-qt
-src/bench/bench_dash
+src/tiajians
+src/tiajiansd
+src/tiajians-cli
+src/tiajians-tx
+src/test/test_tiajians
+src/test/test_tiajians_fuzzy
+src/qt/test/test_tiajians-qt
+src/bench/bench_tiajians
 
 # autoreconf
 Makefile.in
@@ -82,13 +82,13 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dash-qt
-Dash-Qt.app
+tiajians-qt
+Tiajians-Qt.app
 !/depends/Makefile
 
 # Unit-tests
 Makefile.test
-dash-qt_test
+tiajians-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -125,9 +125,9 @@ src/qt/dash-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-dash-cli
-dashd
-dash-qt
+tiajians-cli
+tiajiansd
+tiajians-qt
 make
 
 /docker/bin
