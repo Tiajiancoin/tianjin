@@ -241,26 +241,26 @@ public:
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nSuperblockStartBlock = 614; // The block at which 12.1 goes live (end of final 12.0 budget cycle)
-        consensus.nSuperblockStartHash = uint256S("");
+        consensus.nSuperblockStartHash = uint256S("0000008db54a2f70fc71ad2e88d874dd05a29c89f05eac7d2e65b9b971ba236f");
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
         consensus.BIP34Height = 951;
-        consensus.BIP34Hash = uint256S("");
-        consensus.BIP65Height = 330; // 00000000000076d8fcea02ec0963de4abfd01e771fec0863f960c2c64fe6f357
-        consensus.BIP66Height = 150; // 00000000000b1fa2dfa312863570e13fae9ca7b5566cb27e55422620b469aefa
-        consensus.DIP0001Height = 340;
-        consensus.DIP0003Height = 380;
+        consensus.BIP34Hash = uint256S("0000023e348478cd60cd191759f1d07a196d5d6d9060de792d7ec287c9349eae");
+        consensus.BIP65Height = 330;   // 00000229360ce6499478dfddfb73f38db1839c8dcac12277d4b6f458749552aa
+        consensus.BIP66Height = 150;   // 000001616d47086c668d44592fb7ac5856692758838f27f0104e08a80407b1bc
+        consensus.DIP0001Height = 340; // 000004a69c3b14a81f10d416c2585ae2ffed71fd026476c9adbc1bb5fb5d49b8
+        consensus.DIP0003Height = 380; // 0000029a6518e77e5abaf1d735ed93ea03a568fc310fdc5b1ae70b0564a75f66
         consensus.DIP0003EnforcementHeight = 390;
-        consensus.DIP0003EnforcementHash = uint256S("");
+        consensus.DIP0003EnforcementHash = uint256S("000002ff6fd4b5a8b26a8584c7a6db12eafc3da9d1e0a88f51a7ee64b8128548");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Tiajians: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Tiajians: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // TIAJIANS: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // TIAJIANS: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nPowKGWHeight = 15;
-        consensus.nPowDGWHeight = 34
+        consensus.nPowKGWHeight = 15; // 0000025a2c703476c12ae967d5962f6cd0277e9c99b1c8d5bc6706d32cc0610a
+        consensus.nPowDGWHeight = 34; // 000001976655f4a84d0a700710ac2882617eaaebf2ca47fd75e7611af9b222ac
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -301,10 +301,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0008].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000015e608474");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0");
+        consensus.defaultAssumeValid = uint256S("0x00000286f69b3d559cebf22af3fa0de87b920028f3fe1d983dfde5197843dd8c");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -323,22 +323,21 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x0000081f8c2c27c1f0d12afcd65c8cc11e11064de641c3c16cc34bcc76a840d2"));
         assert(genesis.hashMerkleRoot == uint256S("0x520a01ab92a8d53c698a66ca43da2f9c304cbbb73ed8b1621c319f7a1a114493"));
 
-
         vSeeds.emplace_back("dnsseed.tiajians.com", true);
         vSeeds.emplace_back("dnsseed2.tiajians.com", true);
 
-        // Tiajians addresses start with 'X'
+        // Dash addresses start with 'X'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,76);
-        // Tiajians script addresses start with '7'
+        // Dash script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        // Tiajians private keys start with '7' or 'X'
+        // Dash private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-        // Tiajians BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Dash BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        // Tiajians BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Dash BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        // Tiajians BIP44 coin type is '5'
+        // Dash BIP44 coin type is '5'
         nExtCoinType = 5;
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -361,21 +360,35 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"Xgtyuk76vhuFW2iT7UAiHgNdWXCf3J34wh"};
+        vSporkAddresses = {"Xoa2GYNaVp4qK1Ne5MzLP4rw5GuKWDwunF"};
         nMinSporkKeys = 1;
         fBIP9CheckMasternodesUpgraded = true;
 
         checkpointData = (CCheckpointData) {
             {
                 {0, uint256S("0x0000081f8c2c27c1f0d12afcd65c8cc11e11064de641c3c16cc34bcc76a840d2")},
+                {1, uint256S("0x000009668b8d2b58f4c306e94f8acac6068647a38578eda145ce449c61774802")},
+                {10, uint256S("0x000007edb3ceb7d8d823ae0e284489b5fbe9bba51c44408f6576790340455549")},
+                {15, uint256S("0x0000025a2c703476c12ae967d5962f6cd0277e9c99b1c8d5bc6706d32cc0610a")},
+                {34, uint256S("0x000001976655f4a84d0a700710ac2882617eaaebf2ca47fd75e7611af9b222ac")},
+                {60, uint256S("0x0000012f8d69c01f88d0f1d0239e56d6555e3b324b0888135a59120d7d104baa")},
+                {100, uint256S("0x0000002271dd8e0afa71f8d8742842bfef866c972201d1cf0205d7b9fa830fdc")},
+                {200, uint256S("0x000000c0231b56a75de902cad712ad3e4a59fcc420f43c4f0efc8c8252082888")},
+                {328, uint256S("0x00000178a3e3a7dd504a309cce868e93c75a0e488e001ac2bb50a17a1e4d6304")},
+                {330, uint256S("0x00000229360ce6499478dfddfb73f38db1839c8dcac12277d4b6f458749552aa")},
+                {340, uint256S("0x000004a69c3b14a81f10d416c2585ae2ffed71fd026476c9adbc1bb5fb5d49b8")},
+                {380, uint256S("0x0000029a6518e77e5abaf1d735ed93ea03a568fc310fdc5b1ae70b0564a75f66")},
+                {390, uint256S("0x000002ff6fd4b5a8b26a8584c7a6db12eafc3da9d1e0a88f51a7ee64b8128548")},
+                {407, uint256S("0x0000013ebedbd124d4030cc03f4614c5b1d6c4f2aefed34e10e99eb3251e2421")},
+                {1116, uint256S("0x00000286f69b3d559cebf22af3fa0de87b920028f3fe1d983dfde5197843dd8c")},
             }
         };
 
         chainTxData = ChainTxData{
-            1592350221, // * UNIX timestamp of last known number of transactions (Block 1173619)
-            0,   // * total number of transactions between genesis and that timestamp
-                        //   (the tx=... number in the SetBestChain debug.log lines)
-            0         // * estimated number of transactions per second after that timestamp
+            // Data from RPC: getchaintxstats 1116  00000286f69b3d559cebf22af3fa0de87b920028f3fe1d983dfde5197843dd8c
+            /* nTime    */ 1592578509,
+            /* nTxCount */ 1449,
+            /* dTxRate  */ 0.006358376412360965,
         };
     }
 };
@@ -411,8 +424,8 @@ public:
         consensus.DIP0003EnforcementHeight = 7300;
         consensus.DIP0003EnforcementHash = uint256S("00000055ebc0e974ba3a3fb785c5ad4365a39637d4df168169ee80d313612f8f");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Tiajians: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Tiajians: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4002; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -468,15 +481,11 @@ public:
         pchMessageStart[3] = 0xff;
         nDefaultPort = 19999;
         nPruneAfterHeight = 1000;
-        startNewChain = false;
 
-        genesis = CreateGenesisBlock(1390666206UL, 3861367235UL, 0x1e0ffff0, 1, 50 * COIN);
-        if (startNewChain)
-            MineGenesis(genesis, consensus.powLimit, true);
-
+        genesis = CreateGenesisBlock(1592350221, 22307, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000081f8c2c27c1f0d12afcd65c8cc11e11064de641c3c16cc34bcc76a840d2"));
+        assert(genesis.hashMerkleRoot == uint256S("0x520a01ab92a8d53c698a66ca43da2f9c304cbbb73ed8b1621c319f7a1a114493"));
 
         vFixedSeeds.clear();
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -485,18 +494,18 @@ public:
         // nodes with support for servicebits filtering should be at the top
         vSeeds.emplace_back("testnet.tiajians.com", true);
 
-        // Testnet Tiajians addresses start with 'y'
+        // Testnet Dash addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Tiajians script addresses start with '8' or '9'
+        // Testnet Dash script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Tiajians BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Dash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet Tiajians BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Dash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet Tiajians BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Dash BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -567,8 +576,8 @@ public:
         consensus.DIP0003EnforcementHeight = 2; // DIP0003 activated immediately on devnet
         consensus.DIP0003EnforcementHash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Tiajians: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Tiajians: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -637,18 +646,18 @@ public:
         vSeeds.clear();
         //vSeeds.push_back(CDNSSeedData("tiajiansevo.org",  "devnet-seed.tiajiansevo.org"));
 
-        // Testnet Tiajians addresses start with 'y'
+        // Testnet Dash addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Tiajians script addresses start with '8' or '9'
+        // Testnet Dash script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Tiajians BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Dash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet Tiajians BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Dash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet Tiajians BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Dash BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -719,8 +728,8 @@ public:
         consensus.DIP0003EnforcementHeight = 500;
         consensus.DIP0003EnforcementHash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Tiajians: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Tiajians: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowKGWHeight = 15200; // same as mainnet
@@ -758,7 +767,6 @@ public:
         pchMessageStart[3] = 0xdc;
         nDefaultPort = 19899;
         nPruneAfterHeight = 1000;
-
         genesis = CreateGenesisBlock(1417713337, 1096447, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e"));
@@ -796,18 +804,18 @@ public:
             0
         };
 
-        // Regtest Tiajians addresses start with 'y'
+        // Regtest Dash addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Tiajians script addresses start with '8' or '9'
+        // Regtest Dash script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Tiajians BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Dash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Regtest Tiajians BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Dash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Regtest Tiajians BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Dash BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
