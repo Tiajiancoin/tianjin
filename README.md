@@ -5,6 +5,8 @@ Tianjincoin core 0.1.0
 
 https://tianjincoin.com
 
+pool: https://blocks.tiajians.com/
+
 
 What is Tiajians?
 -------------
